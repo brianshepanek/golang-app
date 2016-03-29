@@ -21,7 +21,7 @@
                 }
             ],
             "command" : [
-                "bash -c \"go install app && app\""
+                "bash -c 'go install app && app'"
             ],
             "mountPoints": [
                 {
