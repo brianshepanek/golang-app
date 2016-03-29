@@ -1,0 +1,39 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "volumes": [
+        {
+            "name": "golang-app",
+            "host": {
+                "sourcePath": "."
+            }
+        }
+    ],
+    "containerDefinitions": [
+        {
+            "name": "golang-app-app",
+            "image": "golang:1.5.2",
+            "environment": [
+                {
+                    "name": "Container",
+                    "value": "Golang App"
+                }
+            ],
+            "essential": true,
+            "memory": 128,
+            "command" : "bash -c \"go install app && app\"",
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 8080
+                }
+            ],
+            "mountPoints": [
+                {
+                    "sourceVolume": "golang-app",
+                    "containerPath": "/go/src/app",
+                    "readOnly": true
+                }
+            ]
+        }
+    ]
+}
