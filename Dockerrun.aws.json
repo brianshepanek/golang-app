@@ -1,32 +1,15 @@
 {
     "AWSEBDockerrunVersion": 2,
-    "volumes": [
-        {
-            "name": "golang-volume",
-            "host": {
-                "sourcePath": "/var/app/current"
-            }
-        }
-    ],
     "containerDefinitions": [
         {
             "name": "golang-app",
-            "image": "golang:1.6.0",
+            "image": "brianshepanek/golang-app",
             "essential": true,
             "memory": 128,
             "portMappings": [
                 {
                     "hostPort": 80,
                     "containerPort": 8080
-                }
-            ],
-            "command" : [
-                "tail -f /dev/null"
-            ],
-            "mountPoints": [
-                {
-                    "sourceVolume": "golang-volume",
-                    "containerPath": "/go/src/app"
                 }
             ]
         }
