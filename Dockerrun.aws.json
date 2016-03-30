@@ -3,7 +3,7 @@
     "containerDefinitions": [
         {
             "name": "golang-app",
-            "image": "brianshepanek/golang-app",
+            "image": "brianshepanek/golang-app-docker-image:2016-03-29",
             "essential": true,
             "memory": 128,
             "portMappings": [
