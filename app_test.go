@@ -24,7 +24,7 @@ func TestTruth3(t *testing.T) {
 }
 
 func TestTruth4(t *testing.T) {
-    if true = true {
+    if true != true {
         t.Error("everything I know is wrong")
     }
 }
